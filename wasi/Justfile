@@ -1,2 +1,11 @@
+tiny:
+    tinygo build -o main.wasm -target=wasi main.go
+
 build:
-    GOOS=js GOARCH=wasm CGO_ENABLED=false go build -o main.wasm main.go
+    GOOS=wasip1 GOARCH=wasm CGO_ENABLED=false go build -o main.wasm main.go
+
+push:
+    curl -X POST http://localhost:8080/wasm/test-module --data-binary "@main.wasm"
+
+call:
+    curl -X PUT http://localhost:8080/wasm/test-module --data "World"

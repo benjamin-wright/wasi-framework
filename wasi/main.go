@@ -1,15 +1,23 @@
 package main
 
 import (
-	"fmt"
-	"syscall/js"
+	"io"
+	"os"
+	"time"
 )
 
 func main() {
-	fmt.Println("Hello world!")
-	js.Global().Set("hello", js.FuncOf(hello))
-}
+	input, err := io.ReadAll(os.Stdin)
+	if err != nil {
+		panic(err)
+	}
 
-func hello(this js.Value, p []js.Value) interface{} {
-	return "Hello from Go!"
+	time.Sleep(5 * time.Second)
+
+	output := []byte("Hello, " + string(input) + "!\n")
+
+	_, err = os.Stdout.Write(output)
+	if err != nil {
+		panic(err)
+	}
 }

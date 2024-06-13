@@ -14,7 +14,6 @@
 			"name": "wasi",
 			"path": "wasi",
 			"settings": {
-				""
 			}
 		}
 	],
