@@ -1,0 +1,2 @@
+build:
+    GOOS=js GOARCH=wasm CGO_ENABLED=false go build -o main.wasm main.go

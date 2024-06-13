@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"name": "root",
+			"path": "."
+		},
+		{
+			"name": "framework",
+			"path": "framework",
+			"settings": {
+			}
+		},
+		{
+			"name": "wasi",
+			"path": "wasi",
+			"settings": {
+				""
+			}
+		}
+	],
+	"settings": {}
+}
